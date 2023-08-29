@@ -28,6 +28,8 @@ public class ThreadTwoHashMapBroken extends Thread {
 
 
     // Run this
+
+    //this runs even after throwing an exception
     public static void main(String[] args){
         ThreadTwoHashMapBroken tm = new ThreadTwoHashMapBroken(""+10);
 
