@@ -28,6 +28,7 @@ public class ThreadTwoHashMap extends Thread {
 
 
     // Run this
+    //Stuffs outta wack! things are super jumbled. Maybe due to the threads accessing hashmaps?
     public static void main(String[] args){
 
         runMapOfSize(20);
