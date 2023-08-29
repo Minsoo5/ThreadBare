@@ -36,5 +36,6 @@ public class ThreadTwo  extends Thread {
         t4.start();
         System.out.println("ThreadTwos have been started");
 
+        //The threads just sleep for 6000 millis
     }
 }
