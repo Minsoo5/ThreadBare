@@ -29,6 +29,8 @@ public class ThreadTwoArray extends Thread {
         runArrayOfSize(20);
 
         // wait, what the hell is going on? eh?
+        //Thread Array all have been started msg displays before the for loop ends
+
     }
 
     private static void runArrayOfSize(int size) {
