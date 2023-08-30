@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class Playground extends Thread {
 
@@ -17,6 +20,26 @@ public class Playground extends Thread {
     }
 
 
+    public static void createAndStartThreadsInHashMap(int numOfThreads, int milliDelay) {
+        HashMap<String, Thread> threadHashMap = new HashMap<>();    //make the thread map
+
+        for (int i = 1; i <= numOfThreads; i++) {            //make as many threads as the input
+            threadHashMap.put("Thread " + i, new Playground());
+        }
+
+        Set<String> threadKeySet = threadHashMap.keySet();   // Grab all the keys
+
+        for (String s : threadKeySet) {
+            threadHashMap.get(s).start();
+            try {
+                Thread.sleep(milliDelay);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+    }
 
 
 
@@ -41,8 +64,7 @@ public class Playground extends Thread {
         }
         */
 
-
-
+        createAndStartThreadsInHashMap(5, 1000);
 
 
 
