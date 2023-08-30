@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Playground extends Thread {
 
@@ -62,9 +59,34 @@ public class Playground extends Thread {
         for (int i = 0; i < threadList.size(); i++) {
             threadList.get(i).start();
         }
-        */
+*/
 
-        createAndStartThreadsInHashMap(5, 1000);
+        //HashMaps != Thread Safe
+        //Even if one thread blows up, the rest can still go through about their day....
+        //createAndStartThreadsInHashMap(5, 1000);
+
+        //ArrayList vs Vector
+
+        List<Integer> arrayList = new ArrayList<>();
+
+        long arrayStart = System.currentTimeMillis();
+        for (int i = 1; i <= 1_000_000; i++) {
+            arrayList.add(i);
+        }
+        long arrayEnd = System.currentTimeMillis();
+        System.out.println("Time for Array List to add " + arrayList.size() + " elements: " + (arrayEnd - arrayStart));
+
+
+
+        List<Integer> vectorList = new Vector<>();
+
+        long vecStart = System.currentTimeMillis();
+        for (int i = 1; i <= 1_000_000; i++) {
+            vectorList.add(i);
+        }
+        long vecEnd = System.currentTimeMillis();
+        System.out.println("Time for Vector to add " + vectorList.size() + " elements: " + (vecEnd - vecStart));
+
 
 
 
