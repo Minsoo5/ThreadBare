@@ -17,6 +17,12 @@ public class Playground extends Thread {
     }
 
 
+    public void addToArrayList(ArrayList<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            list.add(1);
+        }
+    }
+
     public static void createAndStartThreadsInHashMap(int numOfThreads, int milliDelay) {
         HashMap<String, Thread> threadHashMap = new HashMap<>();    //make the thread map
 
@@ -71,7 +77,7 @@ public class Playground extends Thread {
 
         long arrayStart = System.currentTimeMillis();
         for (int i = 1; i <= 1_000_000; i++) {
-            arrayList.add(i);
+
         }
         long arrayEnd = System.currentTimeMillis();
         System.out.println("Time for Array List to add " + arrayList.size() + " elements: " + (arrayEnd - arrayStart));
